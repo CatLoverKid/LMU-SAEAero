@@ -9,11 +9,10 @@ Table of Contents
 ###  1 . . . [Scope](#1-scope)
 ###### 1.1 . . [Identification](#11-identification)
 ###### 1.2 . . [System Overview](#12-system-overview)
-###### 1.3 . . [Document Overview](#13-document-overview)
 ###  2 . . . [Relavent and Applicable Documents](#2-applicable-documents)
 ###### 2.1 . . [SAE Rules and Regulations](#21-sae-rules-and-regulations)
 ###  3 . . . [Subsystems Breakdown](#3-subsystems-breakdown)
-###  4 . . . [Computing Requirements by Subsystem](#4-computing-requirements-by-subsystem)
+###  4 . . . [Computing Requirements by Subsystem](#4-computing-requirements)
 
 <br><br><br>
 
@@ -31,7 +30,7 @@ The Primary Aircraft (PA) is a manually and remotely-controlled aircraft that wi
 
 The requirements for the PA software suite, known as the "Digital Acquisition System" (DAS) are as follows:
 * The DAS will continually read the craft's altitude
-* The DAS will wirelessly transmit the altitude of the craft to the pit crew for scoring purposes
+* The DAS will wirelessly transmit the altitude of the craft to the pit crew
 * The DAS will NOT use the same 2.4GHz channel as the PA's control systems
 * The DAS will also record the current state of all payloads, in the form of 'primed', and 'released'
 * The DAS will be capable of time syncing payload drops and altitude.
@@ -45,17 +44,13 @@ The Colonist Deliver Aircraft (CDA) is an autonomously controlled aircraft that 
 * While in Manual Override, the CDA will pitch fully up immediately
 
 <br>
-## §1.3 Document Overview
 
 # §2 Applicable Documents
+Section 2 contains overviews of all included documents, and their application for this project.
 ## §2.1 SAE Rules and Regulations
-
-
+  Sections 8.10-8.16 directly pertain to the requirements of the TCS.
+<br>
+# §3 Subsystems Breakdown
+# §4 Computing Requirements
 
 [SAERulesAndRegulationsDocument]: https://github.com/CatLoverKid/LMU-SAEAero/blob/master/SAE_Aero_Design_Rules_2019.pdf
-
-
-The Primary Aircraft will feature several Telemetry and Control systems. Namely, Control of the craft will be administered through a commercially available, off-the-shelf, flight controller.  The nature of this controller will be determined at a later time, by the Electrical Engineering team. The requirements regarding the flight controller can be found in §2.6 of the [RULES DOCUMENT][SAERulesAndRegulationsDocument].
-<br>
-Telemetry onboard the PA will be handled by a Raspberry Pi Zero, which is powered by a small Lithium-Polymer Battery Pack. Telemetry data will be collected from various sensors located around the craft. This data will be filtered, analyzed, and realized on the Raspberry Pi Zero, and then any data that is required will be spent via a 2.4 GHz LoRA antenna to the pit crew.
-<b><br>*NEED TABLE EXPLAINING WHAT DATA NEEDS TO BE BEAMED DOWN*</b>
