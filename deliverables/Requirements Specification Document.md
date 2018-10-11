@@ -23,10 +23,7 @@ This Software Requirements Specification (SRS) Documents the requirements for th
 ## §1.2 System Overview
 The Telemetry and Control System is a multi-platform set of software suites that collectively fulfill the requirements of the [RULES DOCUMENT][SAERulesAndRegulationsDocument]. These programs, in conjunction, will provide the team with telemetry data, fly sub-crafts, and provide wireless communications with the pit crew. The suite has been broken down into several parts, as follows:
 ### §1.2.1 Primary Aircraft (PA)
-The Primary Aircraft (PA) is a manually and remotely-controlled aircraft that will be responsible for the following:
-* Delivering all payloads to the drop site
-* Flying from/to the landing strip
-* communicating wirelessly with the pit crew in order to relay telemetry data
+The Primary Aircraft (PA) is a manually and remotely-controlled aircraft that will be responsible for communicating wirelessly with the pit crew in order to relay telemetry data. Additionally, the primary aircraft will feature an off-the-shelf RC airplane control loop, that will feature no additional software, in correspondence with section 8.10 of the [RULES DOCUMENT][SAERulesAndRegulationsDocument], which prohibits autonomous flight of the PA.
 
 The requirements for the PA software suite, known as the "Digital Acquisition System" (DAS) are as follows:
 * The DAS will continually read the craft's altitude
@@ -43,12 +40,12 @@ The Colonist Deliver Aircraft (CDA) is an autonomously controlled aircraft that 
 * The CDA will have an alternate mode of operation to be used in case of emergencies, known as "Manual Override"
 * While in Manual Override, the CDA will pitch fully up immediately
 
-<br>
+<br><br><br>
 
 # §2 Applicable Documents
 Section 2 contains overviews of all included documents, and their application for this project.
 ## §2.1 SAE Rules and Regulations
-  Sections 8.10-8.16 directly pertain to the requirements of the TCS.
+  Sections 8.10-8.16 directly pertain to the requirements of the TCS. Section 8 as a whole pertains to the Advanced Division.
 <br>
 # §3 Subsystems Breakdown
 # §4 Computing Requirements
