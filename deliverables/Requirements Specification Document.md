@@ -48,6 +48,11 @@ Section 2 contains overviews of all included documents, and their application fo
   Sections 8.10-8.16 directly pertain to the requirements of the TCS. Section 8 as a whole pertains to the Advanced Division.
 <br>
 # §3 Subsystems Breakdown
+## §3.1 CDA Controls Software:
+The CDA Controls Software (CDACS) will feature the following specifications:
+* The CDACS will communicate wirelessly with the pit
+* The CDACS will feature a Wireless Serial Interface for receiving the command to initiate a Manual Override
+* The CDACS will actuate either two or three servo motors, in order to full rule
 # §4 Computing Requirements
 
 [SAERulesAndRegulationsDocument]: https://github.com/CatLoverKid/LMU-SAEAero/blob/master/SAE_Aero_Design_Rules_2019.pdf
