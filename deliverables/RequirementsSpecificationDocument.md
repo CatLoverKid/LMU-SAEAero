@@ -12,7 +12,9 @@ Table of Contents
 ###  2 . . . [Relavent and Applicable Documents](#2-applicable-documents)
 ###### 2.1 . . [SAE Rules and Regulations](#21-sae-rules-and-regulations)
 ###  3 . . . [Subsystems Breakdown](#3-subsystems-breakdown)
-###  4 . . . [Computing Requirements by Subsystem](#4-computing-requirements)
+###  4 . . . [Requirements by Subsystem](#4-system-requirements)
+###### 4.1 . . [CDA Requirements](#41-cda-subsystem-requirements)
+
 
 <br><br><br>
 
@@ -53,6 +55,20 @@ The CDA Controls Software (CDACS) will feature the following specifications:
 * The CDACS will communicate wirelessly with the pit
 * The CDACS will feature a Wireless Serial Interface for receiving the command to initiate a Manual Override
 * The CDACS will actuate either two or three servo motors, in order to full rule
-# §4 Computing Requirements
+
+# §4 System Requirements
+## §4.1 CDA subsystem requirements
+  - The CDA will feature an Arduino Nano, powered by an ATmega328p.
+  - The ATmega328p will be responsible for all onboard computations and handling of CDA code execution
+  - The Nano will handle all General Purpose IO (GPIO), Analog to Digital Conversion (ADC), reading of sensors (via GPIO pins), and actuation of control surfaces (via GPIO/ADC pins)
+  - The Nano will be connected via GPIO to any number of Voltage Regulators that will manage the power for any number of Servo motors, which will be responsible for actuating the control surfaces of the CDA.
+  - The Nano will be connected to an XBee Wireless communications shield
+  - The XBee Wireless communications shield will be responsible for communicating with both the PA, and with the Pit crew.
+  - The XBee Wireless communications shield will be responsible for receiving input from the pits
+  - The Nano will be connected to a GPS Module
+  - The GPS Module will provide the Nano will real-time (sub .5Hz) data concerning the CDA's X,Y,Z coordinates, Altitude, Heading, Speed, and orientation
+  - The Nano will be connected to an Accelerometer/Gyroscope Module
+  - The Accelerometer/Gyroscope module will provide the Nano with real-time (Sub 0.5Hz) data concerning the CDA's Pitch, Yaw, Roll, X acceleration, Y acceleration, and Z acceleration.
+  - These data points will be used to generate a flight path that will guide the CDA from its current position to the goal zone.
 
 [SAERulesAndRegulationsDocument]: https://github.com/CatLoverKid/LMU-SAEAero/blob/master/SAE_Aero_Design_Rules_2019.pdf
