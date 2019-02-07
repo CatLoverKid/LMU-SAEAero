@@ -80,4 +80,6 @@ The CDA Controls Software (CDACS) will feature the following specifications:
 - <b>GPS:</b> Global Positioning System
 - <b>PA:</b> Primary Aircraft
 - <b>TCS:</b> Telemtry and Control System
+
+
 [SAERulesAndRegulationsDocument]: https://github.com/CatLoverKid/LMU-SAEAero/blob/master/SAE_Aero_Design_Rules_2019.pdf
