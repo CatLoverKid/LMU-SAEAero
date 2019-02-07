@@ -21,9 +21,7 @@
 - Finalize Demo for presentation
 
 ## Semester 2
-
 #### January:
-- Begin wiring Diagram for PA
 - Finalize Algorithm for handling GPS navigation
 #### February:
 - Finalize Wiring Diagram for PA

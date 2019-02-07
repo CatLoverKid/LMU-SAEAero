@@ -21,7 +21,7 @@
 
 // etc helpers constants
 #define LINE_BREAK "***********************************************"
-#define DEBUG_MODE true
+#define DEBUG_MODE false
 
 Servo aeroR;
 Servo aeroL;
@@ -56,7 +56,7 @@ void setup()
     while (1);
   }
   IMU.enableDefault();
-  
+
   // Initialize Servo motors
   aeroR.attach(AERO_R_PIN);
   aeroL.attach(AERO_L_PIN);
@@ -77,17 +77,17 @@ void loop()
 {
   // Handle Gyro/Accel, also move Servos
   IMU.read(); // Grab Gyro and Accel data points
-  
+
   float ax = IMU.a.x * ACCEL_CONVERSION_FACTOR;
   float ay = IMU.a.y * ACCEL_CONVERSION_FACTOR;
   float az = IMU.a.z * ACCEL_CONVERSION_FACTOR;
-  
+
   float gx = IMU.g.x * GRYO_CONVERSION_FACTOR;
   float gy = IMU.g.y * GRYO_CONVERSION_FACTOR;
   float gz = IMU.g.z * GRYO_CONVERSION_FACTOR;
- 
+
   aeroR.write((int)floor(constrain((ay * 90) + 90, SERVO_DEAD_ZONE, 180 - SERVO_DEAD_ZONE)));
-  aeroL.write((int)floor(constrain((ay * -90) + 90, SERVO_DEAD_ZONE, 180 - SERVO_DEAD_ZONE)));  
+  aeroL.write((int)floor(constrain((ay * -90) + 90, SERVO_DEAD_ZONE, 180 - SERVO_DEAD_ZONE)));
   // Handle GPS
   char gps_output = GPS.read();
   if (GPSECHO)
@@ -98,7 +98,7 @@ void loop()
     return;
   }
   if (timer > millis()) timer = millis();
-  
+
   if (millis() - timer > 2000) {
     timer = millis(); // reset the timer
     Serial.print("\nTime: ");

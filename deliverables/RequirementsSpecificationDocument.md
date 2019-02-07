@@ -14,6 +14,7 @@ Table of Contents
 ###  3 . . . [Subsystems Breakdown](#3-subsystems-breakdown)
 ###  4 . . . [Requirements by Subsystem](#4-system-requirements)
 ###### 4.1 . . [CDA Requirements](#41-cda-subsystem-requirements)
+###  5 . . . [Glossary of Terms](#5-glossary-of-terms)
 
 
 <br><br><br>
@@ -23,7 +24,7 @@ Table of Contents
 This Software Requirements Specification (SRS) Documents the requirements for the The LMU SAE Aero Team 2019 Telemetry and Control System, called the Telemetry and Control System (TCS). The document will provide an overview for all required technical and functional requirements for the TCS, along with links to any auxiliary sources for hardware specifications.
 <br>
 ## §1.2 System Overview
-The Telemetry and Control System is a multi-platform set of software suites that collectively fulfill the requirements of the [RULES DOCUMENT][SAERulesAndRegulationsDocument]. These programs, in conjunction, will provide the team with telemetry data, fly sub-crafts, and provide wireless communications with the pit crew. The suite has been broken down into several parts, as follows:
+The Telemetry and Control System is a multi-platform set of programs that collectively fulfill the software requirements of the [RULES DOCUMENT][SAERulesAndRegulationsDocument]. These programs will provide the team with telemetry data, will fly sub-crafts, and will provide wireless communications with the pit crew. The suite has been broken down into several parts, as follows:
 ### §1.2.1 Primary Aircraft (PA)
 The Primary Aircraft (PA) is a manually and remotely-controlled aircraft that will be responsible for communicating wirelessly with the pit crew in order to relay telemetry data. Additionally, the primary aircraft will feature an off-the-shelf RC airplane control loop, that will feature no additional software, in correspondence with section 8.10 of the [RULES DOCUMENT][SAERulesAndRegulationsDocument], which prohibits autonomous flight of the PA.
 
@@ -58,7 +59,7 @@ The CDA Controls Software (CDACS) will feature the following specifications:
 
 # §4 System Requirements
 ## §4.1 CDA subsystem requirements
-  - The CDA will feature an Arduino Nano, powered by an ATmega328p.
+  - The CDA will feature an Arduino Nano, powered by an ATmega328p microprocessor.
   - The ATmega328p will be responsible for all onboard computations and handling of CDA code execution
   - The Nano will handle all General Purpose IO (GPIO), Analog to Digital Conversion (ADC), reading of sensors (via GPIO pins), and actuation of control surfaces (via GPIO/ADC pins)
   - The Nano will be connected via GPIO to any number of Voltage Regulators that will manage the power for any number of Servo motors, which will be responsible for actuating the control surfaces of the CDA.
@@ -71,4 +72,12 @@ The CDA Controls Software (CDACS) will feature the following specifications:
   - The Accelerometer/Gyroscope module will provide the Nano with real-time (Sub 0.5Hz) data concerning the CDA's Pitch, Yaw, Roll, X acceleration, Y acceleration, and Z acceleration.
   - These data points will be used to generate a flight path that will guide the CDA from its current position to the goal zone.
 
+# §5 Glossary of Terms
+- <b>ADC:</b> Analog to Digital Converter
+- <b>CDA:</b> Colonist Delivery Aircraft
+- <b>DAC:</b> Digital to Analog Converter
+- <b>GPIO:</b> General Purpose Input Output
+- <b>GPS:</b> Global Positioning System
+- <b>PA:</b> Primary Aircraft
+- <b>TCS:</b> Telemtry and Control System
 [SAERulesAndRegulationsDocument]: https://github.com/CatLoverKid/LMU-SAEAero/blob/master/SAE_Aero_Design_Rules_2019.pdf
