@@ -57,6 +57,9 @@ The CDA Controls Software (CDACS) will feature the following specifications:
 * The CDACS will feature a Wireless Serial Interface for receiving the command to initiate a Manual Override
 * The CDACS will actuate either two or three servo motors, in order to full rule
 
+## §3.2 Pit controls Software
+The CDA will wirelessly interface (through the aforementioned XBee wireless transmitter/receivers) with a similar antenna in the pit, in order to relay current data about the craft and to receive commands from the Pit boss. In the event of a Manual Override (as mentioned in §1.2.2), the Pit Boss will press a button on the computer located in the pits, which will wireless communicate with the CDA and order a Manual Override. This system is to be entirely handled by the EE team.
+
 # §4 System Requirements
 ## §4.1 CDA subsystem requirements
   - The CDA will feature an Arduino Nano, powered by an ATmega328p microprocessor.

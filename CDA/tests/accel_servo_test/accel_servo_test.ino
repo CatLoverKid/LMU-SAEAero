@@ -1,3 +1,14 @@
+/* Requirements:
+ * IMU on:
+ * SDA to A4
+ * SCL to A5
+ * PWR and GND
+ * Optional: Tie VDD LOW
+ * 
+ * Servo connected to Digital Pin 6
+ * Uses standard of 115200 Baud
+ */
+
 #include <Wire.h>
 #include <LSM6.h>
 #include <Servo.h>
@@ -7,7 +18,7 @@ LSM6 imu;
 
 float ACC_CONVERSION_FACTOR = 0.000061;
 float GRYO_CONVERSION_FACTOR = 0.001;
-int AERO_PIN = 8;
+int AERO_PIN = 6;
 
 char report[80];
 int servoPos;
@@ -15,7 +26,7 @@ int servoPos;
 void setup()
 {
   aero.attach(AERO_PIN);
-  Serial.begin(9600);
+  Serial.begin(115200);
   Wire.begin();
   
   if (!imu.init())

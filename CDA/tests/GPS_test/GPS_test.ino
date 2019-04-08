@@ -1,5 +1,5 @@
 #include <Adafruit_GPS.h>
-#define GPSSerial Serial1
+#define GPSSerial SoftwareSerial(9, 10)
 
 Adafruit_GPS GPS(&GPSSerial);
 
@@ -16,14 +16,14 @@ void setup()
   GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
   GPS.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ); // 1 Hz update rate
   GPS.sendCommand(PGCMD_ANTENNA);
-  
   delay(1000);
-  
   GPSSerial.println(PMTK_Q_RELEASE);
+  Serial.println("testing");
 }
 
 void loop() // run over and over again
 {
+  Serial.println("Testing"); 
   char c = GPS.read();
   if (GPSECHO)
   if (c) Serial.print(c);
@@ -33,7 +33,6 @@ void loop() // run over and over again
     return;
   }
   if (timer > millis()) timer = millis();
-  
   if (millis() - timer > 2000) {
     timer = millis(); // reset the timer
     Serial.print("\nTime: ");

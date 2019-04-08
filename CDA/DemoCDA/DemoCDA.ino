@@ -53,6 +53,7 @@ void setup()
   Wire.begin(); // IMU uses Wire, which by default uses SDA and SCL on the Arduino (A4 and A5)
   if (!IMU.init() && DEBUG_MODE) {
     Serial.println("Failed to detect and initialize IMU!");
+    Serial.println("Exiting")
     while (1);
   }
   IMU.enableDefault();
